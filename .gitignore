@@ -1,34 +1,42 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-/Contactly/.vs/Contactly/CopilotIndices/0.2.1657.32929
-/Contactly/.vs/Contactly/CopilotIndices/0.2.1657.32929
-*.cache
-*.cache
-*.cache
-*.cache
-*.cache
-Contactly/Contactly/obj/Debug/net8.0/Contactly.AssemblyInfoInputs.cache
-Contactly/Contactly/obj/Debug/net8.0/Contactly.AssemblyInfoInputs.cache
-/Contactly/Contactly/obj/Debug/net8.0
-*.cache
-Contactly/.vs/Contactly/FileContentIndex/450a0e79-e6c2-462e-8e77-481daab903ce.vsidx
-Contactly/Contactly/obj/Debug/net8.0/Contactly.AssemblyInfo.cs
-Contactly/Contactly/obj/Debug/net8.0/Contactly.AssemblyInfoInputs.cache
-/Contactly/.vs/Contactly/FileContentIndex
-*.cache
-*.v2
-/Contactly/.vs/Contactly/CopilotIndices
-/Contactly/.vs/Contactly/FileContentIndex
-*.cache
-/Contactly/.vs/Contactly/config
-/Contactly/.vs/Contactly/v17
-/Contactly/.vs/Contactly/v17
-/Contactly/Contactly/bin/Debug/net8.0
-/Contactly/.vs/Contactly/v17
-/Contactly/.vs/Contactly/v17
-/Contactly/Contactly/obj/Debug/net8.0
-*.cache
-/Contactly/.vs/Contactly/CopilotIndices/0.2.1657.32929
-/Contactly/.vs/Contactly/DesignTimeBuild
-Contactly/.vs/Contactly/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
-/Contactly/.vs/Contactly/CopilotIndices
-/Contactly/.vs/Contactly/CopilotIndices
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db

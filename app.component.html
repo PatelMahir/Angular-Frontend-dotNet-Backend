@@ -1,0 +1,80 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <!-- Left Section -->
+    <div class="col-md-6 bg-light">
+      <form (ngSubmit)="onFormSubmit()" [formGroup]="contactsForm">
+        <h1 class="py-10 bold">Contactly</h1>
+        <div>
+          <div class="form-group">
+            <label for="name" class="bold">Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="name" class="bold">Email</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Email" />
+          </div>
+          <div class="form-group">
+            <label for="name" class="bold">Phone</label>
+            <input type="tel" class="form-control" formControlName="phone" placeholder="Phone" />
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input 
+                type="checkbox" 
+                class="form-check-input" 
+                id="favorite" 
+                formControlName="favorite" 
+              />
+              <label for="favorite" class="form-check-label">
+                Favorite
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Add Contact</button>
+        </div>
+      </div>
+      </form>
+    </div>
+
+    <!-- Right Section -->
+    <div class="col-md-6 overflow-auto">
+      @if (contacts$ | async; as contacts)
+      {
+        @if(contacts.length > 0) {
+          <ul>
+            @for (item of contacts; track $index) {
+              <li class="p-2 bg-light border-b-2 border-white text-black">
+                <span class="font-light">{{ item.name }}</span>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <!-- Email Section -->
+                  <span class="d-flex align-items-center">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    <span>{{ item.email }}</span>
+                  </span>
+
+                  <!-- Phone Section -->
+                  <span class="d-flex align-items-center">
+                    <i class="bi bi-telephone-fill me-2"></i>
+                    <span>{{ item.phone }}</span>
+                  </span>
+                </div>
+                <div class="mt-4 d-flex w-full">
+                  <a class="bg-success py-1 px-2 cursor-pointer" href="{{'tel:' + item.phone}}">
+                    <i class="bi bi-telephone-fill me-2"></i>
+                  </a>
+                  <button class="btn btn-light text-dark py-2 px-4" type="button" (click)="onDelete(item.id)"> 
+                    <i class="bi bi-trash-fill text-danger me-2"></i> <!-- Delete Icon -->
+                  </button>
+                </div>
+              </li>
+            }
+          </ul>
+        } @else {
+          <p>No contacts found...</p>
+        }
+      }
+    </div>
+  </div>
+</div>
